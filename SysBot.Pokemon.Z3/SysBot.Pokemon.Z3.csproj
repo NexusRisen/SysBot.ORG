@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.FlatBuffers" Version="23.3.3" />
+    <PackageReference Include="KdSoft.FlatBuffers" Version="1.12.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="PKHeX.Core" Version="23.4.6" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SysBot.Pokemon\SysBot.Pokemon.csproj" />
+  </ItemGroup>
+	
+  <Choose>
+    <When Condition=" '$(Platform)' == 'x64' OR $(RuntimeIdentifier.EndsWith('x64')) ">
+      <!-- x64 specific references -->
+      <ItemGroup>
+        <PackageReference Include="Microsoft.Z3" Version="4.12.0" />
+      </ItemGroup>
+    </When>
+    
+    <When Condition=" '$(Platform)' == 'x86' OR $(RuntimeIdentifier.EndsWith('x86')) ">
+      <!-- x86 specific references -->
+      <ItemGroup>
+        <PackageReference Include="Microsoft.Z3.x86" Version="4.12.0" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
+</Project>
