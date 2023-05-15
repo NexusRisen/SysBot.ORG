@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.FlatBuffers" Version="23.3.3" />
+    <PackageReference Include="Google.FlatBuffers" Version="23.5.9" />
     <PackageReference Include="KdSoft.FlatBuffers" Version="1.12.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="PKHeX.Core" Version="23.4.6" />
+    <PackageReference Include="PKHeX.Core" Version="23.5.11" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
   </ItemGroup>
 
@@ -20,7 +20,7 @@
     <When Condition=" '$(Platform)' == 'x64' OR $(RuntimeIdentifier.EndsWith('x64')) ">
       <!-- x64 specific references -->
       <ItemGroup>
-        <PackageReference Include="Microsoft.Z3" Version="4.12.0" />
+        <PackageReference Include="Microsoft.Z3" Version="4.12.2" />
       </ItemGroup>
     </When>
     
