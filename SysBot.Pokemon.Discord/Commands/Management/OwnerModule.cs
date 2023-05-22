@@ -3,10 +3,11 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Discord;
+using PKHeX.Core;
 
 namespace SysBot.Pokemon.Discord
 {
-    public class OwnerModule : SudoModule
+    public class OwnerModule<T> : SudoModule<T> where T : PKM , new()
     {
         [Command("addSudo")]
         [Summary("Adds mentioned user to global sudo")]
@@ -34,7 +35,7 @@ namespace SysBot.Pokemon.Discord
 
         [Command("addChannel")]
         [Summary("Adds a channel to the list of channels that are accepting commands.")]
-        [RequireSudo]
+        [RequireOwner]
         // ReSharper disable once UnusedParameter.Global
         public async Task AddChannel()
         {
@@ -45,7 +46,7 @@ namespace SysBot.Pokemon.Discord
 
         [Command("removeChannel")]
         [Summary("Removes a channel from the list of channels that are accepting commands.")]
-        [RequireSudo]
+        [RequireOwner]
         // ReSharper disable once UnusedParameter.Global
         public async Task RemoveChannel()
         {
@@ -68,7 +69,7 @@ namespace SysBot.Pokemon.Discord
         [Command("leaveguild")]
         [Alias("lg")]
         [Summary("Leaves guild based on supplied ID.")]
-        [RequireSudo]
+        [RequireOwner]
         // ReSharper disable once UnusedParameter.Global
         public async Task LeaveGuild(string userInput)
         {
