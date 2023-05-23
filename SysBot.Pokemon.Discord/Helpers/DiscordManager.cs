@@ -17,7 +17,6 @@ namespace SysBot.Pokemon.Discord
         public RemoteControlAccessList RolesGiveaway => Config.RoleCanGiveaway;
         public RemoteControlAccessList RolesClone => Config.RoleCanClone;
         public RemoteControlAccessList RolesTrade => Config.RoleCanTrade;
-        public RemoteControlAccessList RolesFixOT => Config.RoleCanFixOT;
         public RemoteControlAccessList RolesSeed => Config.RoleCanSeedCheck;
         public RemoteControlAccessList RolesDump => Config.RoleCanDump;
         public RemoteControlAccessList RolesSupportTrade => Config.RoleCanSupportTrade;
@@ -56,7 +55,6 @@ namespace SysBot.Pokemon.Discord
             nameof(RolesTrade) => RolesTrade,
             nameof(RolesSeed) => RolesSeed,
             nameof(RolesDump) => RolesDump,
-            nameof(RolesFixOT) => RolesFixOT,
             nameof(RolesRemoteControl) => RolesRemoteControl,
             nameof(RolesGiveaway) => RolesGiveaway,
             nameof(RolesSupportTrade) => RolesSupportTrade,

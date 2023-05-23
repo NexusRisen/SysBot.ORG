@@ -13,7 +13,6 @@ namespace SysBot.Pokemon
                 or PokeRoutineType.Clone
                 or PokeRoutineType.Dump
                 or PokeRoutineType.SeedCheck
-                or PokeRoutineType.FixOT
                 => new PokeTradeBot(Hub, cfg),
 
             PokeRoutineType.RaidBot => new RaidBot(cfg, Hub),
@@ -35,7 +34,6 @@ namespace SysBot.Pokemon
                 or PokeRoutineType.Clone
                 or PokeRoutineType.Dump
                 or PokeRoutineType.SeedCheck
-                or PokeRoutineType.FixOT
                 => true,
 
             PokeRoutineType.RaidBot => true,

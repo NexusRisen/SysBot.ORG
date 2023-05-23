@@ -132,43 +132,7 @@ namespace SysBot.Pokemon.Discord
             var embed = new EmbedBuilder { ImageUrl = $"attachment://{img}", Color = Color.Purple }.WithFooter(new EmbedFooterBuilder { Text = $"Captured image from bot at address {address}." });
             await Context.Channel.SendFileAsync(ms, img, "", false, embed: embed.Build());
         }
-        [Command("fixOT")]
-        [Alias("fix", "f")]
-        [Summary("Fixes OT and Nickname of a Pokémon you show via Link Trade if an advert is detected.")]
-        [RequireQueueRole(nameof(DiscordManager.RolesFixOT))]
-        public async Task FixAdOT()
-        {
-            var code = Info.GetRandomTradeCode();
-            var sig = Context.User.GetFavor();
-            await QueueHelper<T>.AddToQueueAsync(Context, code, Context.User.Username, sig, new T(), PokeRoutineType.FixOT, PokeTradeType.FixOT).ConfigureAwait(false);
-        }
-
-        [Command("fixOT")]
-        [Alias("fix", "f")]
-        [Summary("Fixes OT and Nickname of a Pokémon you show via Link Trade if an advert is detected.")]
-        [RequireQueueRole(nameof(DiscordManager.RolesFixOT))]
-        public async Task FixAdOT([Summary("Trade Code")] int code)
-        {
-            var sig = Context.User.GetFavor();
-            await QueueHelper<T>.AddToQueueAsync(Context, code, Context.User.Username, sig, new T(), PokeRoutineType.FixOT, PokeTradeType.FixOT).ConfigureAwait(false);
-        }
-
-        [Command("fixOTList")]
-        [Alias("fl", "fq")]
-        [Summary("Prints the users in the FixOT queue.")]
-        [RequireSudo]
-        public async Task GetFixListAsync()
-        {
-            string msg = Info.GetTradeList(PokeRoutineType.FixOT);
-            var embed = new EmbedBuilder();
-            embed.AddField(x =>
-            {
-                x.Name = "Pending Trades";
-                x.Value = msg;
-                x.IsInline = false;
-            });
-            await ReplyAsync("These are the users who are currently waiting:", embed: embed.Build()).ConfigureAwait(false);
-        }
+       
         [Command("itemTrade")]
         [Alias("it", "item")]
         [Summary("Makes the bot trade you a Pokémon holding the requested item, or Ditto if stat spread keyword is provided.")]

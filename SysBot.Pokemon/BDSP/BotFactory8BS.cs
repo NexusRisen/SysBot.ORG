@@ -10,7 +10,6 @@ namespace SysBot.Pokemon
             PokeRoutineType.FlexTrade or PokeRoutineType.Idle
                 or PokeRoutineType.LinkTrade
                 or PokeRoutineType.Dump
-                or PokeRoutineType.FixOT
                 => new PokeTradeBotBS(Hub, cfg), 
 
             PokeRoutineType.RemoteControl => new RemoteControlBotBS(cfg),
@@ -23,7 +22,6 @@ namespace SysBot.Pokemon
             PokeRoutineType.FlexTrade or PokeRoutineType.Idle
                 or PokeRoutineType.LinkTrade
                 or PokeRoutineType.Dump
-                or PokeRoutineType.FixOT
                 => true,
 
             PokeRoutineType.RemoteControl => true,

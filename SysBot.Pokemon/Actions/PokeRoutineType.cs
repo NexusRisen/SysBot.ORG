@@ -43,13 +43,12 @@
         /// <summary> Similar to idle, but identifies the bot as available for Remote input (Twitch Plays, etc). </summary>
         RemoteControl = 6_000,
 
-        FixOT = 6002,
-
+       
         // Add your own custom bots here so they don't clash for future main-branch bot releases.
     }
 
     public static class PokeRoutineTypeExtensions
     {
-        public static bool IsTradeBot(this PokeRoutineType type) => type is >=PokeRoutineType.FlexTrade and <= PokeRoutineType.Dump || type is PokeRoutineType.FixOT;
+        public static bool IsTradeBot(this PokeRoutineType type) => type is >=PokeRoutineType.FlexTrade and <= PokeRoutineType.Dump;
     }
 }

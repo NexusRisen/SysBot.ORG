@@ -6,7 +6,6 @@
         Specific,
         Seed,
         Clone,
-        FixOT,
         Dump,
         SupportTrade,
     }
