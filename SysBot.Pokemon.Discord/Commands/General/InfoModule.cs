@@ -18,7 +18,7 @@ namespace SysBot.Pokemon.Discord
     {
         private const string detail = "Pokémon Legends";
         private const string link = "http://pokelegend.co/";
-        private const string vers = "1.3.0";
+        private const string vers = "1.3.1";
 
         [Command("info")]
         [Alias("about", "whoami", "owner")]
